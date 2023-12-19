@@ -1,0 +1,8 @@
+name: Starter workflow
+
+on: [push, pull_request]
+
+jobs:
+  workflow1:
+    uses: kfilipek/gha-test/.github/workflows/workflow1.yml@master
+
