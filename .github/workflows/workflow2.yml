@@ -1,10 +1,10 @@
-name: CodeQL
+name: Workflow2
 
 on: workflow_call
 
 jobs:
-  CodeQL:
-    name: CodeQL check
+  spellcheck:
+    name: Run spell check
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository

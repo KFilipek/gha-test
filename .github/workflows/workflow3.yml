@@ -1,0 +1,26 @@
+name: Build matrix
+
+on: workflow_call
+
+jobs:
+  BuildMatrix:
+    name: Hello World matrix
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        language: [English, Spanish, French, German]
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Print Hello World
+        run: |
+          if [ "${{ matrix.language }}" == "English" ]; then
+            echo "Hello World"
+          elif [ "${{ matrix.language }}" == "Spanish" ]; then
+            echo "Hola Mundo"
+          elif [ "${{ matrix.language }}" == "French" ]; then
+            echo "Bonjour le Monde"
+          elif [ "${{ matrix.language }}" == "German" ]; then
+            echo "Hallo Welt"
+          fi
