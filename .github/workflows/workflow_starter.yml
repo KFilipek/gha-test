@@ -4,10 +4,12 @@ on: [push, pull_request]
 
 jobs:
   CodeQL:
-    uses: kfilipek/gha-test/.github/workflows/workflow1.yml@master
+    uses: kfilipek/gha-test/.github/workflows/codeql.yml@master
   Spellcheck:
-    uses: kfilipek/gha-test/.github/workflows/workflow2.yml@master
+    uses: kfilipek/gha-test/.github/workflows/spellcheck.yml@master
   HelloWorld:
     needs: [CodeQL, Spellcheck]
-    uses: kfilipek/gha-test/.github/workflows/workflow3.yml@master
-
+    uses: kfilipek/gha-test/.github/workflows/basic.yml@master
+  Benchmarks:
+    needs: HelloWorld
+    uses: kfilipek/gha-test/.github/workflows/benchmarks.yml@master

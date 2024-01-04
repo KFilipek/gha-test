@@ -1,0 +1,14 @@
+name: Benchmarks
+
+on: workflow_call
+
+jobs:
+  CodeQL:
+    name: Benchmarks
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Print benchmarks results
+        run: echo "Benchmarks should be performed here"
