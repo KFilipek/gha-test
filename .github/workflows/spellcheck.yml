@@ -1,6 +1,6 @@
 name: Workflow2
 
-on: workflow_call
+on: [push, pull_request, workflow_call, workflow_call]
 
 jobs:
   spellcheck:
