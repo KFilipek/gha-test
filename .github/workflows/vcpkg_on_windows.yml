@@ -1,0 +1,17 @@
+name: Install HWLOC via Vcpkg
+
+on: 
+  workflow_dispatch: # This allows the workflow to be triggered manually.
+
+jobs:
+  build:
+    runs-on: windows-latest # Specifies that the job runs on the latest Windows runner.
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3 # Checks out your repository under $GITHUB_WORKSPACE, so your job can access it.
+
+    - name: Install dependencies
+      run: |
+        vcpkg install hwloc
+      shell: pwsh # Specifies PowerShell as the shell for running the script.
