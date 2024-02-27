@@ -18,7 +18,8 @@ jobs:
     - name: Initialize vcpkg
       uses: lukka/run-vcpkg@v11.5
       with:
-        vcpkgGitCommitId: 5b1214315250939257ef5d62ecdcbca18cf4fb1c
+        #vcpkgGitCommitId: 5b1214315250939257ef5d62ecdcbca18cf4fb1c
+        vcpkgGitCommitId: 3dd44b931481d7a8e9ba412621fa810232b66289
         vcpkgDirectory: ${{ github.workspace }}/build/vcpkg
         vcpkgConfigurationJsonGlob: '**/vcpkg-configuration.json'
 
