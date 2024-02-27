@@ -1,4 +1,4 @@
-name: Install HWLOC via Vcpkg
+name: Install HWLOC via Vcpkg (run-vcpkg)
 
 on: 
   workflow_dispatch: # This allows the workflow to be triggered manually.
@@ -10,10 +10,9 @@ jobs:
     steps:
     - name: Checkout repository
       uses: actions/checkout@v4 # Checks out your repository under $GITHUB_WORKSPACE, so your job can access it.
-    - name: Cache enable
-      uses: actions/cache@v4
-    #- name: run-vcpkg
-      #uses: lukka/run-vcpkg@v11.5
+
+    - name: run-vcpkg
+      uses: lukka/run-vcpkg@v11.5
 
     - name: Install dependencies
       run: |
