@@ -16,7 +16,7 @@ jobs:
         cmakeVersion: 3.22.6
 
     - name: Initialize vcpkg
-      uses: lukka/run-vcpkg@dev/vcpkgconfjson-support
+      uses: lukka/run-vcpkg@v11.5
       with:
         vcpkgDirectory: ${{ github.workspace }}/build/vcpkg
         vcpkgConfigurationJsonGlob: '**/vcpkg-configuration.json'
