@@ -15,8 +15,6 @@ jobs:
     name: Job name
     runs-on: ubuntu-latest
     steps:
-    - name: Print
-      run: echo ${{ github.event.inputs.options }}
     - name: Conditional echo when true
       if: github.event.inputs.options == 'true'
       run: echo "TRUE"
