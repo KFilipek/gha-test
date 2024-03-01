@@ -4,7 +4,7 @@ name: Inputs test
 on:
   workflow_dispatch:
     inputs:
-      options:
+      option:
         description: 'Option to select what should be printed'
         required: true
         default: 'true'
@@ -16,10 +16,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Print
-      run: echo ${{ inputs.options }}
+      run: echo ${{ github.event.inputs.options }}
     - name: Conditional echo when true
-      if: inputs.options == 'true'
+      if: github.event.inputs.options == 'true'
       run: echo "TRUE"
     - name: Conditional echo when false
-      if: inputs.options != 'true'
+      if: github.event.inputs.options != 'true'
       run: echo "FALSE"
