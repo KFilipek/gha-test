@@ -5,7 +5,7 @@ on:
   workflow_dispatch:
     inputs:
       options:
-        description: 'description here'
+        description: 'Option to select what should be printed'
         required: true
         default: 'true'
         type: boolean
