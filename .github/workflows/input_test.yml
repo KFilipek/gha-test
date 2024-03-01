@@ -1,0 +1,23 @@
+# Inputs test
+name: Inputs test
+
+on:
+  workflow_dispatch:
+    inputs:
+      options:
+        description: 'description here'
+        required: true
+        default: 'true'
+        type: boolean
+
+jobs:
+  job:
+    name: Job name
+    runs-on: ubuntu-latest
+    steps:
+    - name: Conditional echo when true
+      if: ${{ inputs.options == 'true' }}
+      run: echo "TRUE"
+    - name: Conditional echo when false
+      if: ${{ inputs.options != 'true' }}
+      run: echo "FALSE"
